@@ -8,7 +8,7 @@ from django.http import JsonResponse
 from urllib.parse import urlparse
 from scrapyd_api import ScrapydAPI
 from .models import DewataItem
-from datetime import date
+from datetime import date, datetime
 
 
 # Scrapyd api connect
@@ -41,10 +41,18 @@ def is_valid_url(url):
 @require_http_methods(['POST', 'GET']) # only get and post
 def crawl(request):
     if request.method == 'POST':
-        # start spider
-        task = scrapyd.schedule('default', 'dewata_spider')
+        # Check if data has already exist
+        try:
+            DewataItem.objects.filter(date=date.today()).get()
 
-        return JsonResponse({'task_id': task, 'status': 'started'})
+            return JsonResponse({'info': 'data has already exist in DB'})
+        except DewataItem.MultipleObjectsReturned:
+            pass
+        except DewataItem.DoesNotExist:
+            # start spider
+            task = scrapyd.schedule('default', 'dewata_spider')
+
+            return JsonResponse({'task_id': task, 'status': 'started'})
 
     # Get requests are for getting result of a specific crawling task
     elif request.method == 'GET':

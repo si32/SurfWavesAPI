@@ -1,0 +1,75 @@
+2023-08-25 13:41:21 [scrapy.utils.log] INFO: Scrapy 2.10.0 started (bot: scrapy_app)
+2023-08-25 13:41:21 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform Windows-10-10.0.19045-SP0
+2023-08-25 13:41:21 [scrapy.addons] INFO: Enabled addons:
+[]
+2023-08-25 13:41:21 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'scrapy_app',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'logs\\default\\dewata_spider\\ece47a75433311eea87f00bb60adf90c.log',
+ 'NEWSPIDER_MODULE': 'scrapy_app.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'ROBOTSTXT_OBEY': True,
+ 'SPIDER_MODULES': ['scrapy_app.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'}
+2023-08-25 13:41:21 [asyncio] DEBUG: Using selector: SelectSelector
+2023-08-25 13:41:21 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-08-25 13:41:21 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.windows_events._WindowsSelectorEventLoop
+2023-08-25 13:41:21 [scrapy.extensions.telnet] INFO: Telnet Password: 2a4946254831b431
+2023-08-25 13:41:21 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2023-08-25 13:41:21 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-08-25 13:41:21 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-08-25 13:41:21 [scrapy.middleware] INFO: Enabled item pipelines:
+['scrapy_app.pipelines.DewataItemPipeline']
+2023-08-25 13:41:21 [scrapy.core.engine] INFO: Spider opened
+2023-08-25 13:41:21 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-08-25 13:41:21 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-08-25 13:41:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.surf-forecast.com/robots.txt> (referer: None)
+2023-08-25 13:41:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.surf-forecast.com/breaks/Dewata/forecasts/latest> (referer: None)
+2023-08-25 13:41:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://www.surf-forecast.com/breaks/Dewata/forecasts/latest>
+{'raw_data': '[{"period":13,"angle":21.0,"letters":"SSW","height":0.9},{"period":9,"angle":338.0,"letters":"SSE","height":0.5},{"period":9,"angle":90.0,"letters":"W","height":-0.3},{"period":5,"angle":54.0,"letters":"SW","height":0.9}]'}
+2023-08-25 13:41:23 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-08-25 13:41:24 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 484,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 33890,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 2,
+ 'elapsed_time_seconds': 2.441192,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 8, 25, 10, 41, 24, 105580),
+ 'httpcompression/response_bytes': 426084,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 6,
+ 'log_count/INFO': 10,
+ 'response_received_count': 2,
+ 'robotstxt/request_count': 1,
+ 'robotstxt/response_count': 1,
+ 'robotstxt/response_status_count/200': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 8, 25, 10, 41, 21, 664388)}
+2023-08-25 13:41:24 [scrapy.core.engine] INFO: Spider closed (finished)
